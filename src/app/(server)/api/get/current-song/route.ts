@@ -2,8 +2,9 @@ import { getNowPlaying } from '@/app/(server)/config/spotify'
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
+
   const response = await getNowPlaying()
-  console.log(req)
+  console.log(req, res)
 
   // Here we handle the request from the API
   if (response.status === 204 || response.status > 400) {
@@ -11,7 +12,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
       { isPlaying: false },
       {
         status: 200,
-        headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' },
+        headers: { "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=30" },
       }
     );
   }
@@ -23,7 +24,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
       { isPlaying: false },
       {
         status: 200,
-        headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' },
+        headers: { 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=30' },
       }
     );
   }
@@ -34,10 +35,6 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
   const album = song.item.album.name
   const albumImageUrl = song.item.album.images[0].url
   const songUrl = song.item.external_urls.spotify
-
-  const newHeaders = new Headers(req.headers)
-
-  newHeaders.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30')
 
   // obejct containing the information about the currently playing song
   return NextResponse.json(
@@ -51,7 +48,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
     },
     {
       status: 200,
-      headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' },
+      headers: { 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=30' },
     }
   )
 }
