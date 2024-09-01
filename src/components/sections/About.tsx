@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { IoIosCloudDownload } from "react-icons/io";
 import Marquee from "../ui/marquee";
+import { useEffect, useState } from "react";
 
 const content = {
   title: "Ayubowan! I'm",
@@ -20,6 +21,14 @@ const charVariants = {
 }
 
 export default function About() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (!hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [hasAnimated]);
+
   const splitDescription = splitStringUsingRegex(content.description);
 
   return (
@@ -29,7 +38,7 @@ export default function About() {
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="border bg-lgray w-full lg:w-2/3 flex flex-col rounded-2xl p-5 lg:p-10 gap-5 "
+        className="border bg-lgray w-full lg:w-2/3 flex flex-col md:justify-center md:items-center lg:justify-start lg:items-start rounded-2xl p-5 lg:p-10 gap-5 "
       >
         <div className="flex flex-col gap-3 ">
           <span className="text-xlgray text-3xl lg:text-5xl">{content.title}</span>
@@ -50,14 +59,17 @@ export default function About() {
           className="relative bg-lgray border h-fit overflow-hidden rounded-2xl flex flex-col gap-14 lg:gap-20 p-5 lg:p-10"
         >
 
-          <motion.span className="font-bold text-white text-2xl lg:text-4xl z-10" initial="hidden" whileInView="reveal" transition={{ staggerChildren: .02 }}>
-            {
-              splitDescription.map(char => (
-                <motion.span key={char} transition={{ duration: .35 }} variants={charVariants}>
-                  {char}
-                </motion.span>
-              ))
-            }
+          <motion.span
+            className="font-bold text-white text-2xl lg:text-4xl z-10"
+            initial={hasAnimated ? "displayed" : "hidden"}
+            animate={hasAnimated ? "reveal" : ""}
+            transition={{ staggerChildren: 0.02 }}
+          >
+            {splitDescription.map((char, index) => (
+              <motion.span key={index} transition={{ duration: 0.35 }} variants={charVariants}>
+                {char}
+              </motion.span>
+            ))}
           </motion.span>
           <div className="flex justify-end z-10">
             <motion.div
