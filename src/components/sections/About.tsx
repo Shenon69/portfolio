@@ -94,7 +94,7 @@ export default function About() {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 1.2 }}
-          className="flex border rounded-2xl flex-1 overflow-hidden items-center justify-center p-10"
+          className="flex border rounded-2xl flex-1 overflow-hidden items-center justify-center p-10 bg-lgray"
         >
           <Marquee />
         </motion.div>
