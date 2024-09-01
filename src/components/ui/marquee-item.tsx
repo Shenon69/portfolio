@@ -14,7 +14,7 @@ const MarqueeItem: React.FC<MarqueeItemProps> = ({ icons, from, to }) => {
       <motion.div
         initial={{ x: from }}
         animate={{ x: to }}
-        transition={{ duration: 75, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
         className="flex flex-shrink-0 gap-7"
       >
         {icons.map((IconComponent, index) => (
@@ -25,7 +25,7 @@ const MarqueeItem: React.FC<MarqueeItemProps> = ({ icons, from, to }) => {
       <motion.div
         initial={{ x: from }}
         animate={{ x: to }}
-        transition={{ duration: 75, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
         className="flex flex-shrink-0 gap-7"
       >
         {icons.map((IconComponent, index) => (

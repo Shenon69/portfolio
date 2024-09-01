@@ -29,9 +29,9 @@ export default function About() {
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="border bg-lgray w-full lg:w-2/3 flex flex-col rounded-2xl p-5 lg:p-10 gap-5"
+        className="border bg-lgray w-full lg:w-2/3 flex flex-col rounded-2xl p-5 lg:p-10 gap-5 "
       >
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 ">
           <span className="text-xlgray text-3xl lg:text-5xl">{content.title}</span>
           <span className="font-bold text-white text-4xl lg:text-5xl">{content.name}</span>
         </div>
@@ -47,10 +47,10 @@ export default function About() {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: .4 }}
-          className="relative bg-lgray border h-fit overflow-hidden rounded-2xl flex flex-col gap-16 p-5 lg:p-10"
+          className="relative bg-lgray border h-fit overflow-hidden rounded-2xl flex flex-col gap-14 lg:gap-20 p-5 lg:p-10"
         >
 
-          <motion.span className="font-bold text-white text-2xl lg:text-4xl" initial="hidden" whileInView="reveal" transition={{ staggerChildren: .02 }}>
+          <motion.span className="font-bold text-white text-2xl lg:text-4xl z-10" initial="hidden" whileInView="reveal" transition={{ staggerChildren: .02 }}>
             {
               splitDescription.map(char => (
                 <motion.span key={char} transition={{ duration: .35 }} variants={charVariants}>
@@ -59,7 +59,7 @@ export default function About() {
               ))
             }
           </motion.span>
-          <div className="flex justify-end">
+          <div className="flex justify-end z-10">
             <motion.div
               initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
@@ -79,6 +79,15 @@ export default function About() {
 
           <Meteors number={20} />
 
+          <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 4 }}
+            className="absolute bottom-0 left-0 flex gap-5 lg:gap-10 z-0 bg-gradient-to-bl from-lgray to-pink-900/5 pr-3 lg:pr-40 "
+          >
+            <Image src="/images/shape7.png" alt="shape 07" width={150} height={150} className="opacity-35" />
+            <Image src="/images/shape3.png" alt="shape 03" width={150} height={150} className="opacity-35" />
+          </motion.div>
         </motion.div>
 
         <motion.div
