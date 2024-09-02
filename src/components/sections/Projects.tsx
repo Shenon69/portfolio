@@ -1,29 +1,53 @@
 "use client"
 
-import { motion } from "framer-motion";
 import ProjectCard from "../ui/project-card";
+import { projectsData } from "@/const/data/projects";
+import { motion } from "framer-motion";
+
+const fadeInAnimationVariants = {
+  initial: {
+    opactiy: 0,
+    y: 100,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.1,
+    }
+  })
+}
+
 
 export default function Projects() {
   return (
     <section className="pb-96 space-y-10">
 
       <div className="flex items-center gap-5">
-        <h2 className="font-bold text-4xl">
+        <h2 className="font-bold text-4xl lg:text-5xl">
           Projects
         </h2>
         <div className="border-t border-gray-700 w-full" />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+      <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
       >
-        <ProjectCard name="Software Freedom Day 2023" description="This website was created to the Software freedom day 2023 with the collaboration of the FOSS community in NSBM" image="/images/sfd.png" />
-        <ProjectCard name="Azure Open AI voice Assistant" description="This website was created to the Software freedom day 2023 with the collaboration of the FOSS community in NSBM" image="/images/voice.png" />
-        <ProjectCard name="Arduino Day Sri Lanka 2023" description="This website was created to the Software freedom day 2023 with the collaboration of the FOSS community in NSBM" image="/images/arduinoday.png" />
-      </motion.div>
+        {
+          projectsData.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <ProjectCard name={project.name} link={project.link} description={project.description} image={project.image} />
+            </motion.div>
+          ))
+        }
+      </div>
 
     </section>
   )

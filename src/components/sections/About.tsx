@@ -37,7 +37,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: .5 }}
         className="border bg-lgray w-full lg:w-2/3 flex flex-col md:justify-center md:items-center lg:justify-start lg:items-start rounded-2xl p-5 lg:p-10 gap-5 "
       >
         <div className="flex flex-col gap-3 ">
@@ -55,7 +55,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: .4 }}
+          transition={{ duration: .5, delay: .4 }}
           className="relative bg-lgray border h-fit overflow-hidden rounded-2xl flex flex-col gap-14 lg:gap-20 p-5 lg:p-10"
         >
 
@@ -66,7 +66,7 @@ export default function About() {
             transition={{ staggerChildren: 0.02 }}
           >
             {splitDescription.map((char, index) => (
-              <motion.span key={index} transition={{ duration: 0.35 }} variants={charVariants}>
+              <motion.span key={index} transition={{ duration: 0.3 }} variants={charVariants}>
                 {char}
               </motion.span>
             ))}
@@ -94,18 +94,19 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, delay: 4 }}
-            className="absolute bottom-0 left-0 flex gap-5 lg:gap-10 z-0 bg-gradient-to-bl from-lgray to-pink-900/5 pr-3 lg:pr-40 "
+            transition={{ duration: 1, delay: 4 }}
+            className="absolute bottom-0 left-0 flex justify-between max-h-[50%] w-full gap-5 lg:gap-10 z-0 bg-gradient-to-bl from-lgray to-pink-900/10"
           >
-            <Image src="/images/shape7.png" alt="shape 07" width={150} height={150} className="opacity-35" />
-            <Image src="/images/shape3.png" alt="shape 03" width={150} height={150} className="opacity-35" />
+            <Image src="/images/shape7.png" alt="shape 07" width={150} height={150} className="opacity-35 flex-1" />
+            <Image src="/images/shape3.png" alt="shape 03" width={150} height={150} className="opacity-35 flex-1" />
+            <Image src="/images/shape1.png" alt="shape 03" width={150} height={150} className="opacity-35 flex-1" />
           </motion.div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, delay: 1.2 }}
+          transition={{ duration: 1, delay: 1.2 }}
           className="flex border rounded-2xl flex-1 overflow-hidden items-center justify-center p-10 bg-lgray"
         >
           <Marquee />
