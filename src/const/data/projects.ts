@@ -26,5 +26,12 @@ export const projectsData = [
     image: "voice.png",
     link: "https://github.com/Shenon69/azure-oai-voice-assistant",
     technologies: ["Next.js", "Azure", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    name: "Green Supermarket",
+    description: "Developed the admin panel for Green Supermarket project with role-based access control",
+    image: "greensuper.png",
+    link: "https://github.com/Dune-Global/green-supermarket-admin-frontend",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Terraform", "Azure"]
   }
 ]
