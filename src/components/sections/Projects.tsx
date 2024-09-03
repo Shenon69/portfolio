@@ -43,7 +43,7 @@ export default function Projects() {
               viewport={{ once: true }}
               custom={index}
             >
-              <ProjectCard name={project.name} link={project.link} description={project.description} image={project.image} />
+              <ProjectCard name={project.name} link={project.link} description={project.description} image={project.image} technologies={project.technologies} />
             </motion.div>
           ))
         }
