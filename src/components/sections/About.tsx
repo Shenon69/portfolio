@@ -42,7 +42,7 @@ export default function About() {
       >
         <div className="flex flex-col gap-3 ">
           <span className="text-xlgray text-3xl lg:text-5xl">{content.title}</span>
-          <span className="font-bold text-white text-4xl lg:text-5xl">{content.name}</span>
+          <span className="font-bold text-white text-4xl lg:text-6xl">{content.name}</span>
         </div>
         <div>
           <Image src="/images/portfolio.webp" alt="Trishan" width={500} height={500} className="rounded-2xl" />
