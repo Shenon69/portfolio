@@ -33,7 +33,7 @@ export default function About() {
   const splitDescription = splitStringUsingRegex(content.description);
 
   return (
-    <section className="flex flex-col lg:flex-row justify-between gap-5 py-10">
+    <section className="flex flex-col lg:flex-row justify-between gap-5 pb-10">
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}

@@ -20,7 +20,7 @@ const fadeInAnimationVariants = {
 
 export default function Blogs() {
   return (
-    <section className="pb-96 space-y-10">
+    <section className="space-y-10 pb-10">
 
       <div className="flex items-center gap-5">
         <h2 className="font-bold text-4xl lg:text-5xl whitespace-nowrap">
