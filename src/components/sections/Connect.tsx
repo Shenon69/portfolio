@@ -41,10 +41,10 @@ export default function Connect() {
               whileInView="animate"
               viewport={{ once: true }}
               custom={index} >
-              <Link href={item.link} target="_blank" className="z-40">
+              <Link href={item.link} target="_blank" className="z-40  hover:scale-105 transition-all">
                 <item.icon size={52} />
               </Link>
-              <Link href={item.link} target="_blank" className="z-40">
+              <Link href={item.link} target="_blank" className="z-40  hover:scale-105 transition-all">
                 <span>{item.value}</span>
               </Link>
             </motion.div>

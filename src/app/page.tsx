@@ -1,3 +1,4 @@
+import Footer from "@/components/common/footer";
 import About from "@/components/sections/About";
 import Blogs from "@/components/sections/Blogs";
 import Connect from "@/components/sections/Connect";
