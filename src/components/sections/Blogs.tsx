@@ -1,7 +1,7 @@
 "use client"
 
-import { talksData } from "@/const/data/talks";
-import EventCard from "../ui/event-card";
+import { blogsData } from "@/const/data/blogs";
+import BlogCard from "../ui/blog-card";
 import { motion } from "framer-motion";
 
 const fadeInAnimationVariants = {
@@ -18,20 +18,20 @@ const fadeInAnimationVariants = {
   })
 }
 
-export default function Talks() {
+export default function Blogs() {
   return (
-    <section className="space-y-10 pb-10">
+    <section className="pb-96 space-y-10">
 
       <div className="flex items-center gap-5">
         <h2 className="font-bold text-4xl lg:text-5xl whitespace-nowrap">
-          Tech Talks
+          Blogs
         </h2>
         <div className="border-t w-full border-gray-700" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {
-          talksData.map((talk, index) => (
+          blogsData.map((blog, index) => (
             <motion.div
               key={index}
               variants={fadeInAnimationVariants}
@@ -40,7 +40,7 @@ export default function Talks() {
               viewport={{ once: true }}
               custom={index}
             >
-              <EventCard key={index} title={talk.title} event={talk.event} date={talk.date} location={talk.location} image={talk.image} link={talk.link} />
+              <BlogCard key={index} title={blog.title} duration={blog.duration} date={blog.date} image={blog.image} link={blog.link} />
             </motion.div>
           ))
         }
