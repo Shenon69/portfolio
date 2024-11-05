@@ -1,5 +1,13 @@
 export const talksData = [
   {
+    title: "Getting started with Git and GitHub",
+    event: "Git & GitHub Workshop",
+    date: "Oct, 2024",
+    location: "University of Kelaniya",
+    image: "uok-git.webp",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7255431306128326656/"
+  },
+  {
     title: "Version Controlling with Git and GitHub",
     event: "Git It 2024",
     date: "Aug, 2024",
